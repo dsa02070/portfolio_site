@@ -1,0 +1,417 @@
+/* main.css start*/
+
+/* z-index */
+/* 
+header : 200;
+.top_btn : 700;
+button.slick-next, button.slick-prev : 10;
+768px : #gnb: 100;
+*/
+
+/* top button */
+.top_btn{
+    position : fixed;
+    bottom: 10px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: $fontSizeSmall;
+    color : $fontColorPrimary;
+    background: #fff;
+    border-radius: 100%;
+    border : 1px solid $borderColor;
+    z-index: 700;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition : 0.3s;
+    &:hover{
+        color : #fff;
+        background: $buttonColor;
+    }
+}
+.top_btn.on{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* mgnb_btn area */
+.mgnb_btn{
+    display: none;
+    position: absolute;
+    width: 24px;
+    height: 21px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.mgnb_btn a{
+    display: inline-block;
+    
+}
+.mgnb_btn a span{
+    position : absolute;
+    width: 24px;
+    height: 3px;
+    background: #000;
+    transition : 0.3s;
+}
+
+.mgnb_btn a span:nth-child(1){
+    top: 0;
+}
+.mgnb_btn a span:nth-child(2){
+    top: 7px;
+}
+.mgnb_btn a span:nth-child(3){
+    top: 14px;
+}
+/* jquery addClass */
+.opacity_zero{
+    opacity: 0;
+}
+.mgnb_btn a span.first_bar{
+    top: 7px;
+    transform: rotate(135deg);
+}
+.mgnb_btn a span.last_bar{
+    top: 7px;
+    transform: rotate(-135deg);
+}
+
+/* header area */
+header{
+    position : fixed;
+    overflow : hidden;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background: $backgroundColor;
+    z-index: 200;
+    .inner{
+        width: 1070px;
+        margin : 0 auto;
+    }
+    #logo{
+        float : left;
+        h1{
+            a{
+                line-height: 60px;
+                img{
+                    vertical-align: middle;
+                }
+            }
+        }
+    } // logo end
+    #gnb{
+        float : right;
+        transition : 0.3s;
+        ul{
+            li{
+                float : left;
+                margin-left : 20px;
+                border-bottom : 1px solid $borderColor;
+                &:nth-child(1){
+                    margin-left: 0;
+                }
+                a{
+                    font-size: $fontSizeNormal;
+                    color : $fontColorPrimary;
+                    &:hover{
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+        &.on{
+            left: 0px;
+        }
+    } // gnb end
+} // header end
+
+
+/* slick slider stlye */
+section{
+    width: 1070px;
+    margin : 0 auto;
+}
+.portpolio_content{
+    position: relative;
+    margin : 0px auto;
+    padding-top: 80px;
+    border-bottom : 1px solid $borderColor;
+    button.slick-next, button.slick-prev {
+        position : absolute;
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        font-size: 0;
+        color : transparent;
+        background: rgba(255, 255, 255, 0.2);
+        border : 1px solid #d1d1d1;
+        transform : translateY(-50%);
+        cursor : pointer;
+        z-index: 10;
+    }
+    .slick-prev{
+        /* 왼쪽 버튼 */
+        left: 30px;
+        &:before{
+            background: url('../../img/left_arrow2.png');
+        }
+    }
+    .slick-next{
+        /* 오른쪽 버튼 */
+        right: 30px;
+        &:before{
+            background: url('../../img/right_arrow2.png');
+        }
+    }
+    .slick-prev:before, .slick-next:before{
+        content : '';
+        display : block;
+        width: 48px;
+        height: 48px;
+        margin : 0 auto; 
+    }
+    
+    .item {
+        /* .portpolio_content img */ 
+        display : flex;
+        align-items: center;
+        img{
+            width: 50%;
+        }
+        .text_area{
+            width: 50%;
+            padding-left: 50px;
+            margin-bottom: 40px;
+            box-sizing: border-box;
+            text-align: left;
+            h3{
+                font-size: $titleFontSizeSmall;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: $fontSizeMid;
+            }
+            a{
+                display: inline-block;
+                margin : 10px 10px 0 0;
+                padding : 5px 10px;
+                color : white;
+                background: $buttonColor;
+            }
+        }
+    }
+}
+
+.slick-dots{
+    display : flex;
+    justify-content: center;
+    flex-wrap : wrap;
+    padding-bottom: 60px;
+    li{
+        padding : 20px 20px;
+        button{
+            font-size: $fontSizeSmall;
+            color : $fontColorPrimary;
+            background: white;
+            border: 1px solid $borderColor;
+            padding : 10px 20px;
+            cursor : pointer;
+        }
+        &.slick-active button{
+            color : white;
+            background: $buttonColor;
+        }
+    }
+}
+
+/* section profile*/
+section{
+    h2{
+        font-size : $titleFontSizebig;
+        color : $fontColorBasic;
+        margin-bottom: 70px;
+    }
+}
+.profile{
+    border-bottom: 1px solid $borderColor;
+    padding : 150px 30px;
+    box-sizing: border-box;
+    .box_wrap{
+        display : flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+        .box{
+            flex: 1;
+            margin : 0 10px;
+            height: 200px;
+            line-height: 50px;
+            border : 1px solid #d1d1d1;
+            box-sizing: border-box;
+            text-align: center;
+            h3{
+                margin : 40px 0;
+            }
+        }
+    }
+}
+.contact{
+    background: white;
+    padding : 150px 30px;
+    box-sizing: border-box;
+    .list_wrap{
+        display : flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+        .list{
+            flex: 1;
+            margin : 0 10px;
+            height: 200px;
+            line-height: 50px;
+            border : 1px solid #d1d1d1;
+            box-sizing: border-box;
+            text-align: center;
+            h3{
+                margin : 40px 0;
+            }
+        }
+    }
+}
+footer{
+    height: 100px;
+    line-height: 100px;
+    background: #333;
+    color : white;
+    text-align: center;
+    .inner{
+        width: 1070px;
+        margin : 0 auto;
+    }
+}
+/* section contact */
+
+
+@media screen and ( max-width : 1090px){
+    header{
+        .inner{
+            width: 100%;
+            padding : 0 30px;
+            box-sizing: border-box;
+        }
+    }
+    section{
+        width: 100%;
+        padding : 0 30px;
+        box-sizing: border-box;
+    }
+    footer{
+        .inner{
+            width: 100%;
+            padding : 0 30px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@media screen and ( max-width : 768px){
+    .mgnb_btn{
+        display : block;
+    }
+    .portpolio_content{
+        button.slick-next, button.slick-prev{
+            top: 35%;
+        }
+        .item{
+            display : block;
+            img{
+                width: 80%;
+                margin : 0 auto 30px;
+            }
+            .text_area{
+                width: 80%;
+            }
+        }
+    }
+    .contact{
+        .list_wrap{
+            .list{
+                flex-basis:calc(50% - 20px);
+                margin : 10px;
+            }
+        }
+    }
+    /* gnb menu mobile */
+    header{
+        #gnb{
+            position : fixed;
+            top: 60px;
+            bottom: 0;
+            left: -220px;
+            width: 220px;
+            background: $backgroundColor;
+            padding-top: 100px;
+            z-index: 100;
+            ul{
+                li{
+                    margin: 0;
+                    float : none;
+                    a{
+                        font-size: $fontSizeMid;
+                        color : $fontColorPrimary;
+                        padding-left: 20px;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( max-width : 650px){
+    .profile{
+        .box_wrap{
+            .box{
+                flex-basis:calc(100% - 20px);
+                margin : 10px;
+            }
+        }
+    }
+}
+
+@media screen and ( max-width : 600px){
+    .portpolio_content{
+        .item{
+            img{
+                width: 90%;
+            }
+            .text_area{
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media screen and ( max-width : 520px){
+    .contact{
+        .list_wrap{
+            .list{
+                flex-basis:calc(100% - 20px);
+            }
+        }
+    }
+}
+
+@media screen and ( max-width : 380px){
+    body,html{
+        min-width: 380px;
+    }
+    
+}
+
+/* main.css end*/

@@ -1,0 +1,75 @@
+/* main.css start*/
+/* slick slider stlye */
+.portpolio_content {
+  position: relative;
+}
+
+.portpolio_content button.slick-next, .portpolio_content button.slick-prev {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slick-prev:before, .slick-next:before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+}
+
+.slick-prev {
+  font-size: 0;
+  color: transparent;
+  left: 50px;
+}
+
+.slick-prev:before {
+  background: url("../../img/left_arrow2.png");
+}
+
+.slick-next {
+  font-size: 0;
+  color: transparent;
+  right: 50px;
+}
+
+.slick-next:before {
+  background: url("../../img/right_arrow2.png");
+}
+
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slick-dots li {
+  padding: 10px 20px;
+}
+
+.slick-dots li button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+  background: #000;
+}
+
+/* .portpolio_content img */
+.portpolio_content .item img {
+  width: 50%;
+}
+
+/* main.css end*/

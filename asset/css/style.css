@@ -1,0 +1,495 @@
+@charset "UTF-8";
+/* css initial style */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+}
+
+/* main.css start*/
+/* z-index */
+/* 
+header : 200;
+.top_btn : 700;
+button.slick-next, button.slick-prev : 10;
+768px : #gnb: 100;
+*/
+/* top button */
+.top_btn {
+  position: fixed;
+  bottom: 10px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #01497c;
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid #355070;
+  z-index: 700;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.top_btn:hover {
+  color: #fff;
+  background: #01497c;
+}
+
+.top_btn.on {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* mgnb_btn area */
+.mgnb_btn {
+  display: none;
+  position: absolute;
+  width: 24px;
+  height: 21px;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.mgnb_btn a {
+  display: inline-block;
+}
+
+.mgnb_btn a span {
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background: #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.mgnb_btn a span:nth-child(1) {
+  top: 0;
+}
+
+.mgnb_btn a span:nth-child(2) {
+  top: 7px;
+}
+
+.mgnb_btn a span:nth-child(3) {
+  top: 14px;
+}
+
+/* jquery addClass */
+.opacity_zero {
+  opacity: 0;
+}
+
+.mgnb_btn a span.first_bar {
+  top: 7px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.mgnb_btn a span.last_bar {
+  top: 7px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+/* header area */
+header {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #f4f3ee;
+  z-index: 200;
+}
+
+header .inner {
+  width: 1070px;
+  margin: 0 auto;
+}
+
+header #logo {
+  float: left;
+}
+
+header #logo h1 a {
+  line-height: 60px;
+}
+
+header #logo h1 a img {
+  vertical-align: middle;
+}
+
+header #gnb {
+  float: right;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header #gnb ul li {
+  float: left;
+  margin-left: 20px;
+  border-bottom: 1px solid #355070;
+}
+
+header #gnb ul li:nth-child(1) {
+  margin-left: 0;
+}
+
+header #gnb ul li a {
+  font-size: 16px;
+  color: #01497c;
+}
+
+header #gnb ul li a:hover {
+  opacity: 0.7;
+}
+
+header #gnb.on {
+  left: 0px;
+}
+
+/* slick slider stlye */
+section {
+  width: 1070px;
+  margin: 0 auto;
+}
+
+.portpolio_content {
+  position: relative;
+  margin: 0px auto;
+  padding-top: 80px;
+  border-bottom: 1px solid #355070;
+}
+
+.portpolio_content button.slick-next, .portpolio_content button.slick-prev {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  font-size: 0;
+  color: transparent;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid #d1d1d1;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.portpolio_content .slick-prev {
+  /* 왼쪽 버튼 */
+  left: 30px;
+}
+
+.portpolio_content .slick-prev:before {
+  background: url("../../img/left_arrow2.png");
+}
+
+.portpolio_content .slick-next {
+  /* 오른쪽 버튼 */
+  right: 30px;
+}
+
+.portpolio_content .slick-next:before {
+  background: url("../../img/right_arrow2.png");
+}
+
+.portpolio_content .slick-prev:before, .portpolio_content .slick-next:before {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+}
+
+.portpolio_content .item {
+  /* .portpolio_content img */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.portpolio_content .item img {
+  width: 50%;
+}
+
+.portpolio_content .item .text_area {
+  width: 50%;
+  padding-left: 50px;
+  margin-bottom: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: left;
+}
+
+.portpolio_content .item .text_area h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.portpolio_content .item .text_area p {
+  font-size: 18px;
+}
+
+.portpolio_content .item .text_area a {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 5px 10px;
+  color: white;
+  background: #01497c;
+}
+
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 60px;
+}
+
+.slick-dots li {
+  padding: 20px 20px;
+}
+
+.slick-dots li button {
+  font-size: 12px;
+  color: #01497c;
+  background: white;
+  border: 1px solid #355070;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+  color: white;
+  background: #01497c;
+}
+
+/* section profile*/
+section h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 70px;
+}
+
+.profile {
+  border-bottom: 1px solid #355070;
+  padding: 150px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.profile .box_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.profile .box_wrap .box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 10px;
+  height: 200px;
+  line-height: 50px;
+  border: 1px solid #d1d1d1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.profile .box_wrap .box h3 {
+  margin: 40px 0;
+}
+
+.contact {
+  background: white;
+  padding: 150px 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.contact .list_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact .list_wrap .list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 10px;
+  height: 200px;
+  line-height: 50px;
+  border: 1px solid #d1d1d1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+}
+
+.contact .list_wrap .list h3 {
+  margin: 40px 0;
+}
+
+footer {
+  height: 100px;
+  line-height: 100px;
+  background: #333;
+  color: white;
+  text-align: center;
+}
+
+footer .inner {
+  width: 1070px;
+  margin: 0 auto;
+}
+
+/* section contact */
+@media screen and (max-width: 1090px) {
+  header .inner {
+    width: 100%;
+    padding: 0 30px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  section {
+    width: 100%;
+    padding: 0 30px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  footer .inner {
+    width: 100%;
+    padding: 0 30px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mgnb_btn {
+    display: block;
+  }
+  .portpolio_content button.slick-next, .portpolio_content button.slick-prev {
+    top: 35%;
+  }
+  .portpolio_content .item {
+    display: block;
+  }
+  .portpolio_content .item img {
+    width: 80%;
+    margin: 0 auto 30px;
+  }
+  .portpolio_content .item .text_area {
+    width: 80%;
+  }
+  .contact .list_wrap .list {
+    -ms-flex-preferred-size: calc(50% - 20px);
+        flex-basis: calc(50% - 20px);
+    margin: 10px;
+  }
+  /* gnb menu mobile */
+  header #gnb {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: -220px;
+    width: 220px;
+    background: #f4f3ee;
+    padding-top: 100px;
+    z-index: 100;
+  }
+  header #gnb ul li {
+    margin: 0;
+    float: none;
+  }
+  header #gnb ul li a {
+    font-size: 18px;
+    color: #01497c;
+    padding-left: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .profile .box_wrap .box {
+    -ms-flex-preferred-size: calc(100% - 20px);
+        flex-basis: calc(100% - 20px);
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .portpolio_content .item img {
+    width: 90%;
+  }
+  .portpolio_content .item .text_area {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .contact .list_wrap .list {
+    -ms-flex-preferred-size: calc(100% - 20px);
+        flex-basis: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  body, html {
+    min-width: 380px;
+  }
+}
+
+/* main.css end*/
