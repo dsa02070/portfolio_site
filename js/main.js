@@ -19,7 +19,7 @@ $(function () {
     })
 
     // top_btn, menu click event
-    $(".top_btn, #gnb ul li a").click(function () {
+    $(".top_btn a, #gnb ul li a").click(function () {
         let thisElem = $(this.hash);
         let offsetElem = thisElem.offset();
         $("html,body").stop();

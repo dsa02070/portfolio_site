@@ -13,23 +13,28 @@ button.slick-next, button.slick-prev : 10;
     position : fixed;
     bottom: 10px;
     right: 40px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
     text-align: center;
-    font-size: $fontSizeSmall;
-    color : $fontColorPrimary;
-    background: #fff;
     border-radius: 100%;
-    border : 1px solid $borderColor;
     z-index: 700;
     cursor: pointer;
     visibility: hidden;
-    opacity: 0;
     transition : 0.3s;
-    &:hover{
-        color : #fff;
-        background: $buttonColor;
+    opacity: 0;
+    a{
+        display: block;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: $fontSizeSmall;
+        color : $fontColorPrimary;
+        background: #fff;
+        border : 1px solid $borderColor;
+        border-radius: 100%;
+        transition : 0.3s;
+        &:hover{
+            color : #fff;
+            background: $buttonColor;
+        }
     }
 }
 .top_btn.on{
@@ -111,7 +116,7 @@ header{
         ul{
             li{
                 float : left;
-                margin-left : 20px;
+                margin-left : 40px;
                 border-bottom : 1px solid $borderColor;
                 &:nth-child(1){
                     margin-left: 0;
