@@ -33,7 +33,6 @@ $(function () {
         autoplaySpeed: 2000,
         pauseOnHover: true,
         customPaging: function (slider, i) {
-            console.log($(slider.$slides[i]).html());
             return '<button class="tab">' + $(slider.$slides[i]).attr('title') + '</button>';
         },
     });

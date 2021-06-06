@@ -136,7 +136,8 @@ header {
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background: #f4f3ee;
+  background: #fff;
+  border-bottom: 1px solid #d1d1d1;
   z-index: 200;
 }
 
@@ -199,7 +200,8 @@ section {
   border-bottom: 1px solid #355070;
 }
 
-.portpolio_content button.slick-next, .portpolio_content button.slick-prev {
+.portpolio_content button.slick-next,
+.portpolio_content button.slick-prev {
   position: absolute;
   top: 50%;
   width: 50px;
@@ -233,8 +235,9 @@ section {
   background: url("../../img/right_arrow2.png");
 }
 
-.portpolio_content .slick-prev:before, .portpolio_content .slick-next:before {
-  content: '';
+.portpolio_content .slick-prev:before,
+.portpolio_content .slick-next:before {
+  content: "";
   display: block;
   width: 48px;
   height: 48px;
@@ -253,12 +256,12 @@ section {
 
 .portpolio_content .item img {
   width: 50%;
+  border: 1px solid #f1f1f1;
 }
 
 .portpolio_content .item .text_area {
   width: 50%;
-  padding-left: 50px;
-  margin-bottom: 40px;
+  padding-left: 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: left;
@@ -266,11 +269,12 @@ section {
 
 .portpolio_content .item .text_area h3 {
   font-size: 28px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 .portpolio_content .item .text_area p {
-  font-size: 18px;
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 
 .portpolio_content .item .text_area a {
@@ -290,7 +294,7 @@ section {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-bottom: 60px;
+  padding: 30px 0 60px;
 }
 
 .slick-dots li {
@@ -314,7 +318,7 @@ section {
 /* section profile*/
 section h2 {
   font-size: 36px;
-  color: #333;
+  color: #01497c;
   margin-bottom: 70px;
 }
 
@@ -338,19 +342,52 @@ section h2 {
 
 .profile .box_wrap .box {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin: 0 10px;
-  height: 200px;
-  line-height: 50px;
-  border: 1px solid #d1d1d1;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  text-align: center;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.profile .box_wrap .box dl {
+  display: table;
+  width: 85%;
+  padding-bottom: 24px;
+}
+
+.profile .box_wrap .box dl dt {
+  display: table-cell;
+  width: 15%;
+}
+
+.profile .box_wrap .box dl dd {
+  display: table-cell;
+  width: 80%;
 }
 
 .profile .box_wrap .box h3 {
   margin: 40px 0;
+}
+
+.profile .box_wrap .box table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile .box_wrap .box table tr {
+  text-align: center;
+  line-height: 30px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.profile .box_wrap .box table tr:hover {
+  background: #f1f1f1;
+}
+
+.profile .box_wrap .box table tr th {
+  color: #01497c;
+}
+
+.profile .box_wrap .box table tr td {
+  color: #333;
 }
 
 .contact {
@@ -376,16 +413,26 @@ section h2 {
       -ms-flex: 1;
           flex: 1;
   margin: 0 10px;
-  height: 200px;
-  line-height: 50px;
+  height: 220px;
   border: 1px solid #d1d1d1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
 }
 
-.contact .list_wrap .list h3 {
-  margin: 40px 0;
+.contact .list_wrap .list img {
+  width: 48px;
+  margin: 40px 0 20px;
+}
+
+.contact .list_wrap .list p {
+  margin-bottom: 10px;
+}
+
+.contact .list_wrap .list a {
+  font-size: 12px;
+  font-weight: bold;
+  color: #01497c;
 }
 
 footer {
@@ -394,6 +441,7 @@ footer {
   background: #333;
   color: white;
   text-align: center;
+  white-space: nowrap;
 }
 
 footer .inner {
@@ -421,29 +469,41 @@ footer .inner {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
+  .contact .list_wrap .list {
+    -ms-flex-preferred-size: calc(50% - 20px);
+        flex-basis: calc(50% - 20px);
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .profile .box_wrap .box {
+    -ms-flex-preferred-size: calc(100% - 20px);
+        flex-basis: calc(100% - 20px);
+    margin: 10px;
+  }
+  .profile .box_wrap .box dl {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .mgnb_btn {
     display: block;
   }
-  .portpolio_content button.slick-next, .portpolio_content button.slick-prev {
+  .portpolio_content button.slick-next,
+  .portpolio_content button.slick-prev {
     top: 35%;
   }
   .portpolio_content .item {
     display: block;
   }
   .portpolio_content .item img {
-    width: 80%;
+    width: 60%;
     margin: 0 auto 30px;
   }
   .portpolio_content .item .text_area {
     width: 80%;
-  }
-  .contact .list_wrap .list {
-    -ms-flex-preferred-size: calc(50% - 20px);
-        flex-basis: calc(50% - 20px);
-    margin: 10px;
   }
   /* gnb menu mobile */
   header #gnb {
@@ -452,8 +512,9 @@ footer .inner {
     bottom: 0;
     left: -220px;
     width: 220px;
-    background: #f4f3ee;
-    padding-top: 100px;
+    background: #fff;
+    border-right: 1px solid #d1d1d1;
+    padding-top: 30px;
     z-index: 100;
   }
   header #gnb ul li {
@@ -467,13 +528,15 @@ footer .inner {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
+  .slick-dots li {
+    padding: 5px;
+  }
 }
 
 @media screen and (max-width: 650px) {
-  .profile .box_wrap .box {
+  .contact .list_wrap .list {
     -ms-flex-preferred-size: calc(100% - 20px);
         flex-basis: calc(100% - 20px);
-    margin: 10px;
   }
 }
 
@@ -484,17 +547,64 @@ footer .inner {
   .portpolio_content .item .text_area {
     width: 90%;
   }
+  .portpolio_content .item .text_area h3 {
+    font-size: 18px;
+  }
+  .portpolio_content .item .text_area p {
+    font-size: 12px;
+  }
 }
 
-@media screen and (max-width: 520px) {
-  .contact .list_wrap .list {
-    -ms-flex-preferred-size: calc(100% - 20px);
-        flex-basis: calc(100% - 20px);
+@media screen and (max-width: 587px) {
+  .top_btn {
+    right: 20px;
+  }
+  .top_btn a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .portpolio_content .item .text_area h3 {
+    margin-bottom: 20px;
+  }
+  .portpolio_content .item .text_area p {
+    margin-bottom: 5px;
+  }
+  .slick-dots {
+    max-width: 386px;
+  }
+  .slick-dots li {
+    padding: 5px;
+  }
+  section h2 {
+    margin-bottom: 30px;
+  }
+  .profile {
+    padding: 50px 10px;
+  }
+  .profile .box_wrap .box dl dt {
+    font-size: 12px;
+  }
+  .profile .box_wrap .box dl dd {
+    font-size: 12px;
+  }
+  .profile .box_wrap .box table tr th {
+    font-size: 12px;
+  }
+  .profile .box_wrap .box table tr td {
+    font-size: 12px;
+  }
+  .contact {
+    padding: 50px 10px;
+  }
+  footer .inner {
+    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 380px) {
-  body, html {
+  body,
+  html {
     min-width: 380px;
   }
 }
