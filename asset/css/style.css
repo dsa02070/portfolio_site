@@ -5,16 +5,22 @@
   padding: 0;
 }
 
-body, html {
+body,
+html {
   height: 100%;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 ul {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1;
   font-weight: normal;
   font-size: 100%;
@@ -58,9 +64,9 @@ button.slick-next, button.slick-prev : 10;
   height: 45px;
   line-height: 45px;
   font-size: 12px;
-  color: #01497c;
+  color: #111;
   background: #fff;
-  border: 1px solid #355070;
+  border: 1px solid #111;
   border-radius: 100%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -68,7 +74,7 @@ button.slick-next, button.slick-prev : 10;
 
 .top_btn a:hover {
   color: #fff;
-  background: #01497c;
+  background: #111;
 }
 
 .top_btn.on {
@@ -167,7 +173,7 @@ header #gnb {
 header #gnb ul li {
   float: left;
   margin-left: 40px;
-  border-bottom: 1px solid #355070;
+  border-bottom: 1px solid #111;
 }
 
 header #gnb ul li:nth-child(1) {
@@ -176,7 +182,7 @@ header #gnb ul li:nth-child(1) {
 
 header #gnb ul li a {
   font-size: 16px;
-  color: #01497c;
+  color: #111;
 }
 
 header #gnb ul li a:hover {
@@ -196,8 +202,8 @@ section {
 .portpolio_content {
   position: relative;
   margin: 0px auto;
-  padding-top: 80px;
-  border-bottom: 1px solid #355070;
+  padding-top: 130px;
+  border-bottom: 1px solid #111;
 }
 
 .portpolio_content button.slick-next,
@@ -219,7 +225,7 @@ section {
 
 .portpolio_content .slick-prev {
   /* 왼쪽 버튼 */
-  left: 30px;
+  left: -40px;
 }
 
 .portpolio_content .slick-prev:before {
@@ -228,7 +234,7 @@ section {
 
 .portpolio_content .slick-next {
   /* 오른쪽 버튼 */
-  right: 30px;
+  right: -40px;
 }
 
 .portpolio_content .slick-next:before {
@@ -245,7 +251,6 @@ section {
 }
 
 .portpolio_content .item {
-  /* .portpolio_content img */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,13 +260,19 @@ section {
 }
 
 .portpolio_content .item img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   width: 50%;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #f9f9f9;
 }
 
 .portpolio_content .item .text_area {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   width: 50%;
-  padding-left: 40px;
+  padding-left: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: left;
@@ -269,20 +280,49 @@ section {
 
 .portpolio_content .item .text_area h3 {
   font-size: 28px;
-  margin-bottom: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.portpolio_content .item .text_area ul li {
+  font-size: 14px;
+  color: #333;
+  line-height: 34px;
+}
+
+.portpolio_content .item .text_area ul li.sub_text {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.portpolio_content .item .text_area ul li strong {
+  font-size: 16px;
+  color: #111;
 }
 
 .portpolio_content .item .text_area p {
-  font-size: 16px;
-  margin-bottom: 15px;
+  font-size: 12px;
+  color: #888;
+  margin: 5px 0 25px;
 }
 
 .portpolio_content .item .text_area a {
   display: inline-block;
+  font-size: 12px;
+  border-radius: 18px;
   margin: 10px 10px 0 0;
-  padding: 5px 10px;
+  padding: 10px 20px;
   color: white;
-  background: #01497c;
+  background: #111;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.portpolio_content .item .text_area a:hover {
+  opacity: 0.8;
 }
 
 .slick-dots {
@@ -294,36 +334,47 @@ section {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 30px 0 60px;
+  width: 100%;
+  padding: 60px 0 120px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .slick-dots li {
-  padding: 20px 20px;
+  margin: 0px 10px;
 }
 
 .slick-dots li button {
   font-size: 12px;
-  color: #01497c;
-  background: white;
-  border: 1px solid #355070;
-  padding: 10px 20px;
+  color: white;
+  background: #333;
+  border-radius: 20px;
+  border: 1px solid #111;
+  width: 120px;
+  height: 40px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   cursor: pointer;
 }
 
+.slick-dots li button:hover {
+  opacity: 0.8;
+}
+
 .slick-dots li.slick-active button {
-  color: white;
-  background: #01497c;
+  color: #111;
+  background: #f1f1f1;
 }
 
 /* section profile*/
 section h2 {
   font-size: 36px;
-  color: #01497c;
+  color: #111;
   margin-bottom: 70px;
 }
 
 .profile {
-  border-bottom: 1px solid #355070;
+  border-bottom: 1px solid #111;
   padding: 150px 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -354,12 +405,14 @@ section h2 {
 
 .profile .box_wrap .box dl dt {
   display: table-cell;
+  font-weight: bold;
   width: 15%;
 }
 
 .profile .box_wrap .box dl dd {
   display: table-cell;
   width: 80%;
+  line-height: 1.6;
 }
 
 .profile .box_wrap .box h3 {
@@ -373,7 +426,7 @@ section h2 {
 
 .profile .box_wrap .box table tr {
   text-align: center;
-  line-height: 30px;
+  line-height: 35px;
   border-top: 1px solid #333;
   border-bottom: 1px solid #d1d1d1;
 }
@@ -383,10 +436,11 @@ section h2 {
 }
 
 .profile .box_wrap .box table tr th {
-  color: #01497c;
+  color: #111;
 }
 
 .profile .box_wrap .box table tr td {
+  font-size: 12px;
   color: #333;
 }
 
@@ -422,17 +476,20 @@ section h2 {
 
 .contact .list_wrap .list img {
   width: 48px;
-  margin: 40px 0 20px;
+  margin: 40px 0 30px;
 }
 
 .contact .list_wrap .list p {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.contact .list_wrap .list p:nth-of-type(2) {
+  font-size: 12px;
 }
 
 .contact .list_wrap .list a {
   font-size: 12px;
-  font-weight: bold;
-  color: #01497c;
+  color: #111;
 }
 
 footer {
@@ -463,6 +520,14 @@ footer .inner {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
+  section .slick-prev {
+    /* 왼쪽 버튼 */
+    left: 40px;
+  }
+  section .slick-next {
+    /* 오른쪽 버튼 */
+    right: 40px;
+  }
   footer .inner {
     width: 100%;
     padding: 0 30px;
@@ -487,6 +552,16 @@ footer .inner {
   }
 }
 
+@media screen and (max-width: 776px) {
+  .slick-dots {
+    width: 513px;
+    margin: 0px auto;
+  }
+  .slick-dots li {
+    margin: 5px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .mgnb_btn {
     display: block;
@@ -494,6 +569,12 @@ footer .inner {
   .portpolio_content button.slick-next,
   .portpolio_content button.slick-prev {
     top: 35%;
+  }
+  .portpolio_content .slick-dots {
+    padding: 30px 0 60px;
+  }
+  .portpolio_content .slick-dots li {
+    margin: 5px;
   }
   .portpolio_content .item {
     display: block;
@@ -504,6 +585,7 @@ footer .inner {
   }
   .portpolio_content .item .text_area {
     width: 80%;
+    margin: 0 auto;
   }
   /* gnb menu mobile */
   header #gnb {
@@ -523,13 +605,10 @@ footer .inner {
   }
   header #gnb ul li a {
     font-size: 18px;
-    color: #01497c;
+    color: #111;
     padding-left: 20px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-  }
-  .slick-dots li {
-    padding: 5px;
   }
 }
 
@@ -541,9 +620,6 @@ footer .inner {
 }
 
 @media screen and (max-width: 600px) {
-  .portpolio_content .item img {
-    width: 90%;
-  }
   .portpolio_content .item .text_area {
     width: 90%;
   }
@@ -564,17 +640,26 @@ footer .inner {
     height: 30px;
     line-height: 30px;
   }
+  .portpolio_content {
+    padding-top: 100px;
+  }
   .portpolio_content .item .text_area h3 {
     margin-bottom: 20px;
+  }
+  .portpolio_content .item .text_area ul li {
+    font-size: 12px;
+  }
+  .portpolio_content .item .text_area ul li.sub_text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 22px;
   }
   .portpolio_content .item .text_area p {
     margin-bottom: 5px;
   }
-  .slick-dots {
-    max-width: 386px;
-  }
-  .slick-dots li {
-    padding: 5px;
+  .portpolio_content .slick-dots {
+    width: 100%;
+    margin: 0 auto;
   }
   section h2 {
     margin-bottom: 30px;

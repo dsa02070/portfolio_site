@@ -5,6 +5,7 @@ $siteWidth: 1070px;
 
 // text size
 $fontSizeSmall: 12px;
+$fontSizeFit: 14px;
 $fontSizeNormal: 16px;
 $fontSizeMid: 18px;
 $fontSizeBig: 21px;
@@ -19,13 +20,16 @@ $backgroundColor: #fff;
 
 //font color
 $fontColorBasic: #333;
-$fontColorPrimary: #01497c;
-$fontColorHover: #355070;
+$fontColorPrimary: #111;
+$fontColorSub: #888;
 $titleColorBasic: #111;
 
+//font hover
+$fontColorHover: #fff;
+
 //border color
-$borderColor: #355070;
+$borderColor: #111;
 
 //button Color
-$buttonColor: #01497c;
-$buttonColorHover: #355070;
+$buttonColor: #111;
+$buttonColorHover: #666;

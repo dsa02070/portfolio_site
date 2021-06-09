@@ -23,14 +23,16 @@ $(function () {
         let thisElem = $(this.hash);
         let offsetElem = thisElem.offset();
         $("html,body").stop();
-        $("html,body").animate({ scrollTop: offsetElem.top }, 500);
+        $("html,body").animate({
+            scrollTop: offsetElem.top
+        }, 500);
     });
 
     // slick slider
     $('.portpolio_content').slick({
         dots: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
+        autoplay: false,
+        autoplaySpeed: 4000,
         pauseOnHover: true,
         customPaging: function (slider, i) {
             return '<button class="tab">' + $(slider.$slides[i]).attr('title') + '</button>';

@@ -8,6 +8,9 @@ button.slick-next, button.slick-prev : 10;
 768px : #gnb: 100;
 */
 
+@import "var.scss"; // 변수 처리
+
+
 /* top button */
 .top_btn {
   position: fixed;
@@ -174,10 +177,9 @@ section {
 .portpolio_content {
   position: relative;
   margin: 0px auto;
-  padding-top: 80px;
+  padding-top: 130px;
   border-bottom: 1px solid $borderColor;
 
-  //   background: blue;
   button.slick-next,
   button.slick-prev {
     position: absolute;
@@ -196,7 +198,7 @@ section {
 
   .slick-prev {
     /* 왼쪽 버튼 */
-    left: 30px;
+    left: -40px;
 
     &:before {
       background: url("../../img/left_arrow2.png");
@@ -205,7 +207,7 @@ section {
 
   .slick-next {
     /* 오른쪽 버튼 */
-    right: 30px;
+    right: -40px;
 
     &:before {
       background: url("../../img/right_arrow2.png");
@@ -222,37 +224,71 @@ section {
   }
 
   .item {
-    /* .portpolio_content img */
     display: flex;
     align-items: center;
 
     img {
+      flex: 1 0 auto;
       width: 50%;
-      border: 1px solid #f1f1f1;
+      border: 1px solid #d9d9d9;
     }
 
     .text_area {
+      flex: 1 0 auto;
       width: 50%;
-      padding-left: 40px;
+      padding-left: 30px;
       box-sizing: border-box;
       text-align: left;
 
       h3 {
         font-size: $titleFontSizeSmall;
-        margin-bottom: 40px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: $fontColorPrimary;
+      }
+
+      ul {
+        li {
+          font-size: $fontSizeFit;
+          color: $fontColorBasic;
+          line-height: 34px;
+
+          &.sub_text {
+            font-size: $fontSizeNormal;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: $fontColorBasic;
+          }
+
+          strong {
+            font-size: $fontSizeNormal;
+            color: $fontColorPrimary;
+          }
+
+
+        }
       }
 
       p {
-        font-size: $fontSizeNormal;
-        margin-bottom: 15px;
+        font-size: $fontSizeSmall;
+        color: $fontColorSub;
+        margin: 5px 0 25px;
       }
 
       a {
         display: inline-block;
+        font-size: $fontSizeSmall;
+        border-radius: 18px;
         margin: 10px 10px 0 0;
-        padding: 5px 10px;
+        padding: 10px 20px;
         color: white;
         background: $buttonColor;
+        transition: 0.2s;
+
+        &:hover {
+          opacity: 0.8;
+
+        }
       }
     }
   }
@@ -265,23 +301,32 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 30px 0 60px;
+  width: 100%;
+  padding: 60px 0 120px;
+  box-sizing: border-box;
 
   li {
-    padding: 20px 20px;
+    margin: 0px 10px;
 
     button {
       font-size: $fontSizeSmall;
-      color: $fontColorPrimary;
-      background: white;
+      color: white;
+      background: #333;
+      border-radius: 20px;
       border: 1px solid $borderColor;
-      padding: 10px 20px;
+      width: 120px;
+      height: 40px;
+      transition: 0.2s;
       cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &.slick-active button {
-      color: white;
-      background: $buttonColor;
+      color: #111;
+      background: #f1f1f1;
     }
   }
 }
@@ -295,6 +340,7 @@ section {
   }
 }
 
+// 프로필 영역
 .profile {
   border-bottom: 1px solid $borderColor;
   padding: 150px 30px;
@@ -315,12 +361,14 @@ section {
 
         dt {
           display: table-cell;
+          font-weight: bold;
           width: 15%;
         }
 
         dd {
           display: table-cell;
           width: 80%;
+          line-height: 1.6;
         }
       }
 
@@ -328,13 +376,14 @@ section {
         margin: 40px 0;
       }
 
+      // 자격증 영역
       table {
         width: 100%;
         border-collapse: collapse;
 
         tr {
           text-align: center;
-          line-height: 30px;
+          line-height: 35px;
           border-top: 1px solid #333;
           border-bottom: 1px solid #d1d1d1;
 
@@ -347,6 +396,7 @@ section {
           }
 
           td {
+            font-size: $fontSizeSmall;
             color: $fontColorBasic;
           }
         }
@@ -355,6 +405,7 @@ section {
   }
 }
 
+// contact 연락 영역
 .contact {
   background: white;
   padding: 150px 30px;
@@ -375,16 +426,19 @@ section {
 
       img {
         width: 48px;
-        margin: 40px 0 20px;
+        margin: 40px 0 30px;
       }
 
       p {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+
+        &:nth-of-type(2) {
+          font-size: $fontSizeSmall
+        }
       }
 
       a {
         font-size: $fontSizeSmall;
-        font-weight: bold;
         color: $fontColorPrimary;
       }
     }
@@ -406,6 +460,19 @@ footer {
 }
 
 /* section contact */
+@media screen and (max-width : 1190px) {
+  .portpolio_content {
+    .slick-prev {
+      /* 왼쪽 버튼 */
+      left: 40px;
+    }
+
+    .slick-next {
+      /* 오른쪽 버튼 */
+      right: 40px;
+    }
+  }
+}
 
 @media screen and (max-width: 1090px) {
   header {
@@ -421,6 +488,7 @@ footer {
     padding: 0 30px;
     box-sizing: border-box;
   }
+
 
   footer {
     .inner {
@@ -455,6 +523,18 @@ footer {
   }
 }
 
+@media screen and (max-width: 776px) {
+  .slick-dots {
+    width: 513px;
+    margin: 0px auto;
+
+    li {
+      margin: 5px;
+    }
+  }
+}
+
+
 @media screen and (max-width: 768px) {
   .mgnb_btn {
     display: block;
@@ -467,6 +547,14 @@ footer {
       top: 35%;
     }
 
+    .slick-dots {
+      padding: 30px 0 60px;
+
+      li {
+        margin: 5px;
+      }
+    }
+
     .item {
       display: block;
 
@@ -477,6 +565,7 @@ footer {
 
       .text_area {
         width: 80%;
+        margin: 0 auto;
       }
     }
   }
@@ -509,14 +598,8 @@ footer {
       }
     }
   }
-
-  // slick btn
-  .slick-dots {
-    li {
-      padding: 5px;
-    }
-  }
 }
+
 
 @media screen and (max-width: 650px) {
   .contact {
@@ -531,10 +614,6 @@ footer {
 @media screen and (max-width: 600px) {
   .portpolio_content {
     .item {
-      img {
-        width: 90%;
-      }
-
       .text_area {
         width: 90%;
 
@@ -562,10 +641,24 @@ footer {
   }
 
   .portpolio_content {
+    padding-top: 100px;
+
     .item {
       .text_area {
         h3 {
           margin-bottom: 20px;
+        }
+
+        ul {
+          li {
+            font-size: $fontSizeSmall;
+
+            &.sub_text {
+              font-size: $fontSizeFit;
+              margin-bottom: 10px;
+              line-height: 22px;
+            }
+          }
         }
 
         p {
@@ -574,14 +667,11 @@ footer {
       }
     }
 
-  }
-
-  .slick-dots {
-    max-width: 386px;
-
-    li {
-      padding: 5px;
+    .slick-dots {
+      width: 100%;
+      margin: 0 auto;
     }
+
   }
 
   section {
