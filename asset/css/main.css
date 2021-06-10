@@ -189,7 +189,7 @@ section {
 
 .portpolio_content .slick-prev {
   /* 왼쪽 버튼 */
-  left: -40px;
+  left: -60px;
 }
 
 .portpolio_content .slick-prev:before {
@@ -198,7 +198,7 @@ section {
 
 .portpolio_content .slick-next {
   /* 오른쪽 버튼 */
-  right: -40px;
+  right: -60px;
 }
 
 .portpolio_content .slick-next:before {
@@ -245,20 +245,20 @@ section {
 .portpolio_content .item .text_area h3 {
   font-size: 28px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #111;
 }
 
 .portpolio_content .item .text_area ul li {
   font-size: 14px;
   color: #333;
-  line-height: 34px;
+  margin-bottom: 24px;
 }
 
 .portpolio_content .item .text_area ul li.sub_text {
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: #333;
 }
 
@@ -471,7 +471,7 @@ footer .inner {
 }
 
 /* section contact */
-@media screen and (max-width: 1190px) {
+@media screen and (max-width: 1210px) {
   .portpolio_content .slick-prev {
     /* 왼쪽 버튼 */
     left: 40px;
@@ -553,6 +553,9 @@ footer .inner {
   .portpolio_content .item .text_area {
     width: 80%;
     margin: 0 auto;
+  }
+  .portpolio_content .item .text_area ul li {
+    margin-bottom: 16px;
   }
   /* gnb menu mobile */
   header #gnb {
