@@ -257,7 +257,9 @@ section {
 
 .portpolio_content .item .text_area ul li.sub_text {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.5px;
   margin-bottom: 30px;
   color: #333;
 }
@@ -316,6 +318,7 @@ section {
   border: 1px solid #111;
   width: 120px;
   height: 40px;
+  letter-spacing: -1px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   cursor: pointer;
@@ -439,8 +442,8 @@ section h2 {
 }
 
 .contact .list_wrap .list img {
-  width: 48px;
-  margin: 40px 0 30px;
+  width: 36px;
+  margin: 60px 0 10px;
 }
 
 .contact .list_wrap .list p {
